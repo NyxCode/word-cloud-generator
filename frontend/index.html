@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>wordcloudgen</title>
+  <link rel="stylesheet" type="text/css" href="rcs/style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@jaames/iro/dist/iro.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="rcs/loading-bar.css" />
+  <script type="text/javascript" src="rcs/loading-bar.js"></script>
+</head>
+
+<body>
+  <div class="colorpicker-overlay" id="text-colorpicker-overlay">
+    <div id="text-color-picker-container"></div>
+  </div>
+  <div class="colorpicker-overlay" id="bg-colorpicker-overlay">
+    <div id="bg-color-picker-container"></div>
+  </div>
+
+  <div class="app-wrapper" id="app-wrapper">
+    <div class="controls-column column">
+      <form>
+        <div class="row">
+          <div class="input-field col s4">
+            <input value="Roboto" id="font-family" type="text" class="validate">
+            <label for="font-family">Font</label>
+          </div>
+          <div class="input-field col s4">
+            <input value="200" id="font-size" type="number" class="validate" min="2" max="999">
+            <label for="font-size">Resolution</label>
+          </div>
+          <div class="input-field col s4">
+            <input value="50" id="max-words" type="number" class="validate" min="1" max="999">
+            <label for="max-words">Words</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s4">
+            <input value="3" id="min-word-len" type="number" class="validate" min="0" max="99">
+            <label for="min-word-len">Min. Word Length</label>
+          </div>
+          <div class="input-field col s4">
+            <input value="40" id="rotation-percentage" type="number" class="validate" min="0" max="100">
+            <label for="rotation-percentage">Rotation Percentage</label>
+          </div>
+          <div class="input-field col s4">
+            <input value="45" id="post-rotate" type="number" class="validate" min="-360" max="360">
+            <label for="post-rotate">Post-Rotation</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <button type='button' class="waves-effect waves-light btn" id="button-open-text-color-picker">Text
+              Color</button>
+          </div>
+
+          <div class="input-field col s6">
+            <button type='button' class="waves-effect waves-light btn" id="open-input">Input Text</button>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="input-field col s6">
+            <button type='button' class="waves-effect waves-light btn" id="button-open-bg-color-picker">Background
+              Color</button>
+          </div>
+          <div class="input-field col s6">
+            <button type='button' class="waves-effect waves-light btn" id="open-blacklist">Blacklist</button>
+          </div>
+        </div>
+        <div class="row checkbox-row">
+          <div class="col s4">
+            <label>
+              <input type="checkbox" class="filled-in" id="capitalize-words" checked="checked" />
+              <span class="bright-label">Capitalize</span>
+            </label>
+          </div>
+          <div class="col s4">
+            <label>
+              <input type="checkbox" class="filled-in" id="debug-mode" />
+              <span class="bright-label">Debug</span>
+            </label>
+          </div>
+          <div class="col s4">
+            <label>
+              <input type="checkbox" class="filled-in" id="transparent-bg" checked="checked" />
+              <span class="bright-label">Transparent</span>
+            </label>
+          </div>
+        </div>
+      </form>
+
+      <div class="controls-bottom">
+        <button type='button' class="waves-effect waves-light btn" id="generate-button">Generate</button>
+      </div>
+    </div>
+    <div class="image-output">
+      <img class="preview-img" id="img-out"
+        onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='"
+        width="50vw" height="100vh" />
+    </div>
+    <a class="btn-floating btn-large waves-effect waves-light red" id="save-button"><i class="fas fa-save"></i></a>
+    <div id="progress-indicator" style="position:absolute;visibility:hidden;width:20vw;height:20vh;margin-left:60vw;margin-top:40vh;">
+        <div class="ldBar label-center" id="progress-bar" style="width:20vw;"  data-value="35" data-preset="circle"></div>
+        <div style="text-align: center;width:20vw;">
+            <span id="current-task">ja lol ey</span>        
+        </div>
+    </div>
+  </div>
+
+  <script>
+    require('./src/renderer.js')
+  </script>
+</body>
+
+</html>

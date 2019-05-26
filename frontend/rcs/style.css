@@ -1,0 +1,116 @@
+body {
+    background-color: #1E1E1E;
+    margin: 0;
+    overflow: hidden;
+    color: #EEEEEE;
+    user-select: none;
+}
+
+.app-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    padding-bottom: 20px;
+}
+
+.column {
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 100vh;
+}
+
+.controls-column {
+    background-color: #333333;
+    width: 40vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.controls-top {
+    padding: 3vh 2vw 0 2vw;
+    flex-grow: 1;
+}
+
+.controls-bottom {
+    padding-bottom: 5vh;
+    padding: 50px 30px 20px 30px;
+}
+
+input {
+    color: white;
+}
+
+.bright-label {
+    color: #DDD;
+}
+
+button {
+    width: 100%;
+}
+
+.preview-img {
+    display: block;
+    width: auto;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.image-output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 100%;
+}
+
+#save-button {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.select-wrapper .caret {
+    fill: rgba(255, 255, 255, 0.5) !important;
+}
+
+.select-wrapper .dropdown-content label {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.colorpicker-overlay {
+    width: 300px;
+    height: 350px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto auto auto;
+    z-index: 99;
+    background-color: #333;
+    padding: 50px 0 0 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#text-colorpicker-overlay {
+    visibility: hidden;
+}
+#bg-colorpicker-overlay {
+    visibility: hidden;
+}
+
+.row {
+    margin-bottom: 10px !important;
+}
+.checkbox-row {
+    margin-top: 20px;
+}

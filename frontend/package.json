@@ -1,0 +1,23 @@
+{
+  "name": "wcgen",
+  "version": "1.0.0",
+  "description": "word cloud generator",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . wcg"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "electron": "^5.0.0"
+  },
+  "dependencies": {
+    "@jaames/iro": "^4.3.3",
+    "electron-reload": "^1.4.0",
+    "jquery": "^3.4.1",
+    "opn": "^6.0.0",
+    "randomstring": "^1.1.5",
+    "rimraf": "^2.6.3",
+    "save-file": "^2.3.1"
+  }
+}
