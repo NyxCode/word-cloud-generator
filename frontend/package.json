@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "devDependencies": {
-    "electron": "^5.0.0"
+    "electron": "^11.5.0"
   },
   "dependencies": {
     "@jaames/iro": "^4.3.3",
